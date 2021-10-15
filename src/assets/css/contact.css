@@ -1,0 +1,419 @@
+
+.contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+    z-index: 999;
+    background-color: #000000;
+    visibility: hidden;
+    -webkit-transition: visibility 0.2s ease-in-out;
+    transition: visibility 0.2s ease-in-out;
+}
+
+.div-is-visible.contact-overlay {
+    visibility: visible;
+    -webkit-transition: visibility 0.2s ease-in-out;
+    transition: visibility 0.2s ease-in-out;
+}
+
+.contact-div {
+    position:fixed;
+    width:60%;
+    height:95vh;
+    top:100vh;
+    z-index: 1000;
+    visibility: visible;
+    background: #080808;
+    /* background: coral; */
+    border-radius: 50px 50px 0 0;
+    padding: 80px 10%;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.div-is-visible.contact-div {
+    visibility: visible;
+    top:100px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-div h2 {
+    font-family: "metropolis-bold", 'Source Sans Pro', 'sans-serif';
+    text-transform: uppercase;
+    color: #FFFFFF;
+    letter-spacing: 0.275rem;
+    width: calc(100% + 0.275rem);
+    font-size: 1.25em;
+    line-height: 1.25;
+    font-weight: 200;
+    margin-top: 0;
+}
+
+.btn-close {
+    display: block;
+    width: 25px;
+    height: 1px;
+    position: absolute;
+    left: 90%;
+    top: 60px;
+    padding: 1px;
+    right: auto;
+    bottom: auto;
+    background-color:transparent;
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+}
+
+.btn-close:hover {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition: -webkit-transform 0.2s;
+    -ms-transition: -ms-transform 0.2s;
+    transition: transform 0.2s;
+}
+
+.btn-close::before,
+.btn-close::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #216863;
+    position: absolute;
+    left: 0;
+    -webkit-transition-duration: 0.2s, 0.2s;
+    transition-duration: 0.2s, 0.2s;
+    -webkit-transition-delay: 0.2s, 0s;
+    transition-delay: 0.2s, 0s;
+}
+
+.btn-close::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.btn-close::after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+/* ===================================================================
+ * # forms
+ *
+ * ------------------------------------------------------------------- */
+
+
+ form {
+    display: block;
+}
+
+fieldset {
+    border: none;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+    display: block;
+    height: 15px;
+    width: 100%;
+    padding: 27px 5%;
+    border: 0;
+    outline: none;
+    color: #828282;
+    font-family: "metropolis-regular", sans-serif;
+    font-size: 17px;
+    line-height: 23px;
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.12);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 12px;
+}
+
+
+
+/* IE9 and below */
+.oldie .ss-custom-select::after {
+    display: none;
+}
+
+  
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    color: #828282;
+}
+  
+label,
+legend {
+    font-family: "metropolis-semibold", sans-serif;
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-bottom: .9rem;
+    line-height: 1.714;
+    color: #828282;
+    display: block;
+}
+  
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline;
+}
+  
+label > .label-text {
+    display: inline-block;
+    margin-left: 1rem;
+    font-family: "metropolis-regular", sans-serif;
+    font-weight: normal;
+    line-height: inherit;
+}
+  
+label > input[type="checkbox"],
+label > input[type="radio"] {
+    margin: 0;
+    position: relative;
+    top: .15rem;
+}
+
+textarea {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textarea;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    flex-direction: column;
+    resize: auto;
+    cursor: text;
+    min-height: 200px;
+    max-height: 250px;
+    min-width: 100%;
+}
+/* ------------------------------------------------------------------- 
+* ## style placeholder text
+* ------------------------------------------------------------------- */
+::-webkit-input-placeholder {
+    color: #828282;
+}
+  
+:-moz-placeholder {
+    color: #828282;  /* Firefox 18- */
+}
+  
+::-moz-placeholder {
+    color: #828282;  /* Firefox 19+ */
+}
+  
+:-ms-input-placeholder {
+    color: #828282;
+}
+  
+.placeholder {
+    color: #828282 !important;
+}
+  
+/* ------------------------------------------------------------------- 
+* ## change autocomplete styles in chrome
+* ------------------------------------------------------------------- */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #216863;
+    transition: background-color 5000s ease-in-out 0s;
+}
+  
+  
+  
+  
+/* ===================================================================
+* # buttons - (_button.scss)
+*
+* ------------------------------------------------------------------- */
+
+input[type="submit"]{
+    display: inline-block;
+    font-family: "metropolis-semibold", sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    height: 40px;
+    line-height: 12px;
+    padding: 10px 50px;
+    margin: 0 .3rem 20px 0;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #216863;
+    border: .2rem solid #216863;
+}
+  
+
+input[type="submit"]:focus {
+    background-color: #b8b8b8;
+    border-color: #b8b8b8;
+    color: #000000;
+    outline: 0;
+}
+
+input[type="submit"]:hover {
+    background-color: transparent;
+    border-color: #c5c5c5;
+    color: #c5c5c5;
+    outline: 0;
+}
+
+
+
+/* button primary
+* ------------------------------------------------- */
+input[type="submit"].btn--primary {
+   background: #216863;
+   border-color: #216863;
+   color: #FFFFFF;
+}
+ 
+
+input[type="submit"].btn--primary:focus {
+   background: #216863;
+   border-color: #216863;
+}
+
+
+#status {
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    color: black;
+    border-radius: 8px;
+    font-family: "metropolis-regular", sans-serif;
+    line-height: 5px;
+}
+
+#status.success {
+    background-color: rgb(176, 250, 153);
+    animation: status 4s ease forwards;
+}
+#status.error {
+    background-color: rgb(250, 92, 92);
+    animation: status 4s ease forwards;
+}
+
+
+@keyframes status {
+    0%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    90%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .contact-div {
+        position:fixed;
+        width:70%;
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-div {
+        position:fixed;
+        width:80%;
+    }
+}
+
+@media (max-width: 700px) {
+    .contact-div {
+        position:fixed;
+        width:90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-div {
+        position:fixed;
+        width:100%;
+    }
+      
+    textarea {
+        min-height: 100px;
+        max-height: 150px;
+    }
+
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="text"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="password"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 25px 5%;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    input[type="submit"]{
+        font-size: 14px;
+        height: 38px;
+        width: 100%;
+        line-height: 12px;
+        padding: 10px 50px;
+        margin: 0 .3rem 20px 0;
+    }
+}
