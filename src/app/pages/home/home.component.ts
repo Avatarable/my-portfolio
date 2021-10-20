@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IInfo } from 'src/app/info';
+import { InfoService } from 'src/app/info.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
+  public info:any = {};
+
+  constructor(private _infoService: InfoService) {
     var head  = document.getElementsByTagName('head')[0];
     var link  = document.createElement('link');
     link.id   = "maincss";
@@ -22,6 +26,8 @@ export class HomeComponent implements OnInit {
     $.getScript("assets/js/main_prof.js");
     $.getScript("assets/js/headline.js");
     $.getScript("assets/js/contact.js");
-  }
 
+    this._infoService.getInfo()
+      .subscribe((data:any) => {this.info = data.data;});
+  }
 }

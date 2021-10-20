@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IInfo } from 'src/app/info';
 import { InfoService } from 'src/app/info.service';
 
 @Component({
@@ -9,13 +8,13 @@ import { InfoService } from 'src/app/info.service';
 })
 export class AboutComponent implements OnInit {
 
-  public info:IInfo[] = [];
+  public info:any = {};
 
   constructor(private _infoService: InfoService) { }
 
   ngOnInit(): void {
     this._infoService.getInfo()
-      .subscribe(data => this.info = data);
+      .subscribe((data:any) => {this.info = data.data;});
   }
 
 }

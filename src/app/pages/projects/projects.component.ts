@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoService } from 'src/app/info.service';
 
 @Component({
   selector: 'app-projects',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() {
+  public info:any = {};
+
+  constructor(private _infoService: InfoService) {
     var head  = document.getElementsByTagName('head')[0];
 
     function addCSS(id:string, href:string){
@@ -31,6 +34,9 @@ export class ProjectsComponent implements OnInit {
     $.getScript("assets/js/contact.js");
     $.getScript("assets/js/nav.js");
     $.getScript("assets/js/main.js");
+
+    this._infoService.getInfo()
+      .subscribe((data:any) => {this.info = data.data;});
     
   }
 }
